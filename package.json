@@ -1,0 +1,36 @@
+{
+  "name": "network-manager",
+  "version": "0.0.1",
+  "description": "Network Manager for Nodejs",
+  "main": "./bin/networkManager.js",
+  "bin": {
+    "networkManager": "./bin/networkManager"
+  },
+  "scripts": {
+    "dev": "node ./test.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MahdadGhasemian/network-manager.git"
+  },
+  "keywords": [
+    "nodejs",
+    "netwrok",
+    "manager",
+    "setting",
+    "ip",
+    "lan",
+    "wifi",
+    "sbc",
+    "raspberry-pi",
+    "ornage-pi",
+    "network-setting"
+  ],
+  "author": "Mahdad Ghasemian (mahdad.ghasemian@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MahdadGhasemian/network-manager/issues"
+  },
+  "homepage": "https://github.com/MahdadGhasemian/network-manager#readme"
+}
