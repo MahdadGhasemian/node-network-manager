@@ -1,6 +1,6 @@
 {
   "name": "node-network-manager",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "private": false,
   "description": "Network Manager for Nodejs",
   "main": "./index.js",
@@ -12,6 +12,9 @@
     "type": "git",
     "url": "git+https://github.com/MahdadGhasemian/network-manager.git"
   },
+  "os": [
+    "linux"
+  ],
   "keywords": [
     "nodejs",
     "netwrok",
@@ -23,7 +26,9 @@
     "sbc",
     "raspberry-pi",
     "ornage-pi",
-    "network-setting"
+    "network-setting",
+    "nmcli",
+    "network-manager"
   ],
   "author": "Mahdad Ghasemian (mahdad.ghasemian@gmail.com)",
   "license": "ISC",
