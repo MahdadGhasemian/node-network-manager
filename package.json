@@ -1,6 +1,7 @@
 {
   "name": "network-manager",
   "version": "0.0.1",
+  "private": false,
   "description": "Network Manager for Nodejs",
   "main": "./bin/networkManager.js",
   "bin": {
