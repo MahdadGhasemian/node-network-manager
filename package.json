@@ -1,6 +1,6 @@
 {
   "name": "node-network-manager",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "description": "Network Manager for Nodejs",
   "main": "./index.js",
