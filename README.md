@@ -58,11 +58,11 @@ network
   .catch((error) => console.log(error));
 ```
 
-3- Get network connectivity state
+3- Get network connectivity state (params: reChecking = true|false)
 
 ```javascript
 network
-  .getNetworkConnectivityState()
+  .getNetworkConnectivityState(true)
   .then((hostName) => console.log(hostName))
   .catch((error) => console.log(error));
 ```
@@ -94,7 +94,7 @@ network
   .catch((error) => console.log(error));
 ```
 
-7- Observe NetworkManager activity. Watches for changes in connectivity state, devices or connection profiles.
+7- Observe NetworkManager activity. Watches for changes in connectivity state, devices or connection profiles. (params: stream = stream)
 
 ```javascript
 const fs = require("fs");
@@ -122,7 +122,7 @@ network
   .catch((error) => console.log(error));
 ```
 
-8- List in-memory and on-disk connection profiles,
+8- List in-memory and on-disk connection profiles (params: active = true|false)
 
 ```javascript
 network
@@ -131,7 +131,7 @@ network
   .catch((error) => console.log(error));
 ```
 
-9- Activate a connection
+9- Activate a connection (params: uuid (can get with getConnectionProfilesList))
 
 ```javascript
 network
@@ -140,7 +140,7 @@ network
   .catch((error) => console.log(error));
 ```
 
-10- Deactivate a connection from a device without preventing the device from further auto-activation.
+10- Deactivate a connection from a device without preventing the device from further auto-activation. (params: uuid (can get with getConnectionProfilesList))
 
 ```javascript
 network
@@ -149,7 +149,7 @@ network
   .catch((error) => console.log(error));
 ```
 
-11- List available Wi-Fi access points.
+11- List available Wi-Fi access points. (params: reScan = true|false)
 
 ```javascript
 network
@@ -158,7 +158,7 @@ network
   .catch((error) => console.log(error));
 ```
 
-12- Connect to a Wi-Fi network specified by SSID
+12- Connect to a Wi-Fi network specified by SSID (params: SSID = String , Password = String)
 
 ```javascript
 network
@@ -190,6 +190,10 @@ network
 This project is licensed under the MIT License
 
 ## Change log
+
+### 1.0.3 (2021-09-26)
+
+- Fixed Examples in README file
 
 ### 1.0.2 (2021-09-26)
 
