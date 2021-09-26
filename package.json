@@ -1,11 +1,11 @@
 {
-  "name": "network-manager",
-  "version": "0.0.2",
+  "name": "node-network-manager",
+  "version": "0.0.1",
   "private": false,
   "description": "Network Manager for Nodejs",
-  "main": "./bin/networkManager.js",
+  "main": "./bin/nodeNetworkManager.js",
   "bin": {
-    "networkManager": "./bin/networkManager"
+    "nodeNetworkManager": "./bin/nodeNetworkManager"
   },
   "scripts": {
     "dev": "node ./test.js",

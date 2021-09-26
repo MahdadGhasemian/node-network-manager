@@ -1,6 +1,6 @@
-const networkManager = require("./bin/networkManager");
+const nodeNetworkManager = require("./bin/nodeNetworkManager");
 
-const network = new networkManager();
+const network = new nodeNetworkManager();
 
 // network
 //   .getIPv4()

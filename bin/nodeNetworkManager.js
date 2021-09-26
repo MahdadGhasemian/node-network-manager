@@ -1,7 +1,7 @@
 const os = require("os");
 const { spawn } = require("child_process");
 
-class networkManager {
+class nodeNetworkManager {
   constructor() {}
 
   getIPv4() {
@@ -321,4 +321,4 @@ class networkManager {
   }
 }
 
-module.exports = networkManager;
+module.exports = nodeNetworkManager;
