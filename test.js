@@ -1,4 +1,4 @@
-const nodeNetworkManager = require("./bin/nodeNetworkManager");
+const nodeNetworkManager = require("./index.js");
 
 const network = new nodeNetworkManager();
 
