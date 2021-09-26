@@ -66,10 +66,10 @@ const network = new networkManager();
 //   })
 //   .catch((error) => console.log(error));
 
-// network
-//   .getConnectionProfilesList()
-//   .then((data) => console.log(data))
-//   .catch((error) => console.log(error));
+network
+  .getConnectionProfilesList()
+  .then((data) => console.log(data))
+  .catch((error) => console.log(error));
 
 // network
 //   .connectionUp("79373ad4-c462-43f7-90bd-ffdd4036623f")
