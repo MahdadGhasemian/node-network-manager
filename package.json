@@ -1,12 +1,9 @@
 {
   "name": "node-network-manager",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "description": "Network Manager for Nodejs",
   "main": "./bin/nodeNetworkManager.js",
-  "bin": {
-    "nodeNetworkManager": "./bin/nodeNetworkManager"
-  },
   "scripts": {
     "dev": "node ./test.js",
     "test": "echo \"Error: no test specified\" && exit 1"
