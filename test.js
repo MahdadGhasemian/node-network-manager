@@ -1,6 +1,4 @@
-const nodeNetworkManager = require("./index.js");
-
-const network = new nodeNetworkManager();
+const network = require("./index.js");
 
 // network
 //   .getIPv4()
