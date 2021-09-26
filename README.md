@@ -6,12 +6,10 @@
 
 Network Setting and Get Network Info (IP, Lan, Wifi and ...)
 
-## Note
+## Notes
 
-> Note: `--capt-add=SYS-ADMIN` is required for PDF rendering.
-
-1. This package works only `linux` based systems (linux on PC, Raspberry-pi, Orange-pi and ...)
-2. This package required to `nmcli` (`network-manager`)
+> Note1: This package works only `linux` based systems (linux on PC, Raspberry-pi, Orange-pi and ...)
+> Note2: This package required to `nmcli` (`network-manager`)
 
 - [Install `NetworkManager` on Ubuntu](https://help.ubuntu.com/community/NetworkManager)
 - [`nmcli` Document](https://developer-old.gnome.org/NetworkManager/stable/nmcli.html)
