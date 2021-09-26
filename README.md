@@ -10,7 +10,7 @@ Network Setting and Get Network Info (IP, Lan, Wifi and ...)
 
 ```diff
 - This package works only `linux` based systems
-# linux on PC, Raspberry-pi, Orange-pi and ...
++ linux on PC, Raspberry-pi, Orange-pi and ...
 - This package required to `nmcli` (`network-manager`)
 ```
 
@@ -191,6 +191,10 @@ This project is licensed under the MIT License
 
 ## Change log
 
+### 1.0.2 (2021-09-26)
+
+- Fixed README file
+
 ### 1.0.1 (2021-09-26)
 
 - Fixed README file
@@ -198,11 +202,3 @@ This project is licensed under the MIT License
 ### 1.0.0 (2021-09-26)
 
 - Release first version
-
-```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
-```
