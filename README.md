@@ -9,6 +9,7 @@ Network Setting and Get Network Info (IP, Lan, Wifi and ...)
 ## Notes
 
 > Note1: This package works only `linux` based systems (linux on PC, Raspberry-pi, Orange-pi and ...)
+>
 > Note2: This package required to `nmcli` (`network-manager`)
 
 - [Install `NetworkManager` on Ubuntu](https://help.ubuntu.com/community/NetworkManager)
@@ -195,3 +196,11 @@ This project is licensed under the MIT License
 ### 1.0.0 (2021-09-26)
 
 - Release first version
+
+```diff
+- text in red
++ text in green
+! text in orange
+# text in gray
+@@ text in purple (and bold)@@
+```
