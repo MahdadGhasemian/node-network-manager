@@ -185,11 +185,35 @@ network
   .catch((error) => console.log(error));
 ```
 
+15- Get ethernet and wifi ip details (v1.0.5)
+
+```javascript
+network
+  .getConnectionProfilesList(false)
+  .then((data) => {
+    const ethernet = data.find((item) => item.TYPE === "ethernet");
+    const wifi = data.find((item) => item.TYPE === "wifi");
+    network
+      .getDeviceInfoIPDetail(ethernet.DEVICE)
+      .then((data) => console.log(data))
+      .catch((error) => console.log(error));
+    network
+      .getDeviceInfoIPDetail(wifi.DEVICE)
+      .then((data) => console.log(data))
+      .catch((error) => console.log(error));
+  })
+  .catch((error) => console.log(error));
+```
+
 ## License
 
 This project is licensed under the MIT License
 
 ## Change log
+
+### 1.0.5 (2021-10-03)
+
+- added getDeviceInfoIPDetail function
 
 ### 1.0.4 (2021-10-03)
 

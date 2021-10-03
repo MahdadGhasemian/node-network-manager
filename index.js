@@ -223,6 +223,41 @@ module.exports.connectionDown = function (uuid) {
     }
   });
 };
+module.exports.getDeviceInfoIPDetail = function (deviceName) {
+  return new Promise((resolve, reject) => {
+    try {
+      const nmcli = spawn("nmcli", ["device", "show", String(deviceName)]);
+      let body = [];
+      nmcli.stdout.on("data", (data) => {
+        body.push(data);
+      });
+      nmcli.stderr.on("data", (data) => {
+        reject(data.toString());
+      });
+      nmcli.on("close", (code) => {
+        try {
+          if (code !== 0) return reject(`error code : ${code}`);
+
+          const data = stringToJson(body.join("")).map((item) => {
+            return {
+              type: item["GENERAL.TYPE"],
+              mac: item["GENERAL.HWADDR"],
+              ipV4: item["IP4.ADDRESS[1]"].replace(/\/[0-9]{2}/g, ""),
+              gatwayV4: item["IP4.GATEWAY"],
+              ipV6: item["IP6.ADDRESS[1]"].replace(/\/[0-9]{2}/g, ""),
+              gatwayV6: item["IP6.GATEWAY"],
+            };
+          });
+          resolve(data);
+        } catch (error) {
+          reject(error);
+        }
+      });
+    } catch (error) {
+      reject(error);
+    }
+  });
+};
 module.exports.getWifiList = function (reScan = false) {
   return new Promise((resolve, reject) => {
     try {
