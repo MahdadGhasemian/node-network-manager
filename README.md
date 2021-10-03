@@ -191,6 +191,10 @@ This project is licensed under the MIT License
 
 ## Change log
 
+### 1.0.4 (2021-10-03)
+
+- added inUseBoolean field in 'getWifiList' result
+
 ### 1.0.3 (2021-09-26)
 
 - Fixed Examples in README file

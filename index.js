@@ -243,7 +243,13 @@ module.exports.getWifiList = function (reScan = false) {
         try {
           if (code !== 0) return reject(`error code : ${code}`);
 
-          resolve(stringToJson(body.join("")));
+          resolve(
+            stringToJson(body.join("")).map((el) => {
+              let o = Object.assign({}, el);
+              o.inUseBoolean = o["IN-USE"] === "*";
+              return o;
+            })
+          );
         } catch (error) {
           reject(error);
         }
