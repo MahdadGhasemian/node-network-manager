@@ -14,8 +14,10 @@ Network Setting and Get Network Info (IP, Lan, Wifi and ...)
 - This package required to `nmcli` (`network-manager`)
 ```
 
-- [Install `NetworkManager` on Ubuntu](https://help.ubuntu.com/community/NetworkManager)
-- [`nmcli` Document](https://developer-old.gnome.org/NetworkManager/stable/nmcli.html)
+```diff
++ [Install NetworkManager on Ubuntu](https://help.ubuntu.com/community/NetworkManager)
++ [nmcli Document](https://developer-old.gnome.org/NetworkManager/stable/nmcli.html)
+```
 
 ## Installation
 
