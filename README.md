@@ -38,7 +38,7 @@ network
   .catch((error) => console.log(error));
 ```
 
-### Examples
+## Examples
 
 1- Enable network
 
@@ -210,6 +210,10 @@ network
 This project is licensed under the MIT License
 
 ## Change log
+
+### 1.0.6 (2021-10-13)
+
+- Fix SSID with spaces
 
 ### 1.0.5 (2021-10-03)
 
