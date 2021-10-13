@@ -321,12 +321,11 @@ module.exports.wifiConnect = function (ssid, password) {
 function stringToJson(stringData) {
   const data = stringData
     .toString()
-    .replace(/ /g, "")
     .split("\n")
     .map((keyVal) => {
       const index = keyVal.indexOf(":");
       const obj = {};
-      obj[keyVal.slice(0, index)] = keyVal.slice(index + 1);
+      obj[keyVal.slice(0, index)] = keyVal.slice(index + 1).replace(/^ */, '');
       return obj;
     });
   const firstKey = Object.keys(data[0])[0];
