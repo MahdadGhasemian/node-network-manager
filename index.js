@@ -242,9 +242,9 @@ module.exports.getDeviceInfoIPDetail = function (deviceName) {
             return {
               type: item["GENERAL.TYPE"],
               mac: item["GENERAL.HWADDR"],
-              ipV4: item["IP4.ADDRESS[1]"].replace(/\/[0-9]{2}/g, ""),
+              ipV4: item["IP4.ADDRESS[1]"]?.replace(/\/[0-9]{2}/g, ""),
               gatwayV4: item["IP4.GATEWAY"],
-              ipV6: item["IP6.ADDRESS[1]"].replace(/\/[0-9]{2}/g, ""),
+              ipV6: item["IP6.ADDRESS[1]"]?.replace(/\/[0-9]{2}/g, ""),
               gatwayV6: item["IP6.GATEWAY"],
             };
           });
@@ -325,7 +325,7 @@ function stringToJson(stringData) {
     .map((keyVal) => {
       const index = keyVal.indexOf(":");
       const obj = {};
-      obj[keyVal.slice(0, index)] = keyVal.slice(index + 1).replace(/^ */, '');
+      obj[keyVal.slice(0, index)] = keyVal.slice(index + 1).replace(/^ */, "");
       return obj;
     });
   const firstKey = Object.keys(data[0])[0];
