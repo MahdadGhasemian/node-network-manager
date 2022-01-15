@@ -211,7 +211,7 @@ This project is licensed under the MIT License
 
 ## Change log
 
-### 1.0.7 (2022-01-15)
+### 1.0.7 1.0.8 (2022-01-15)
 
 - Fix getDeviceInfoIPDetail function
 
