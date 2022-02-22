@@ -40,7 +40,7 @@ network
 
 ## Examples
 
-1- Enable network
+#### Enable network
 
 ```javascript
 network
@@ -49,7 +49,7 @@ network
   .catch((error) => console.log(error));
 ```
 
-2- Disable network
+#### Disable network
 
 ```javascript
 network
@@ -58,7 +58,7 @@ network
   .catch((error) => console.log(error));
 ```
 
-3- Get network connectivity state (params: reChecking = true|false)
+#### Get network connectivity state (params: reChecking = true|false)
 
 ```javascript
 network
@@ -67,7 +67,34 @@ network
   .catch((error) => console.log(error));
 ```
 
-4- Enable Wifi
+#### Get Device Status _(new)_
+
+```javascript
+network
+  .deviceStatus()
+  .then((result) => console.log(result))
+  .catch((error) => console.log(error));
+```
+
+#### Connect Device (params: device (can get with deviceStatus)) _(new)_
+
+```javascript
+network
+  .deviceStatus("enp4s0")
+  .then((result) => console.log(result))
+  .catch((error) => console.log(error));
+```
+
+#### Disconnect Device (params: device (can get with deviceStatus)) _(new)_
+
+```javascript
+network
+  .deviceStatus("enp4s0")
+  .then((result) => console.log(result))
+  .catch((error) => console.log(error));
+```
+
+#### Enable Wifi
 
 ```javascript
 network
@@ -76,7 +103,7 @@ network
   .catch((error) => console.log(error));
 ```
 
-5- Disable Wifi
+#### Disable Wifi
 
 ```javascript
 network
@@ -85,7 +112,7 @@ network
   .catch((error) => console.log(error));
 ```
 
-6- Get Wifi status
+#### Get Wifi status
 
 ```javascript
 network
@@ -94,7 +121,25 @@ network
   .catch((error) => console.log(error));
 ```
 
-7- Observe NetworkManager activity. Watches for changes in connectivity state, devices or connection profiles. (params: stream = stream)
+#### Wifi Hotspot (params: ifname (interface name like: wlo1, enp4s0) , ssid , password) _(new)_
+
+```javascript
+network
+  .wifiHotspot("wlo1", "ssid1988", "1234567890")
+  .then((data) => console.log(data))
+  .catch((error) => console.log(error));
+```
+
+#### Get Wifi credentials (params: ifname (interface name like: wlo1, enp4s0)) _(new)_
+
+```javascript
+network
+  .wifiCredentials("wlo1")
+  .then((data) => console.log(data))
+  .catch((error) => console.log(error));
+```
+
+#### Observe NetworkManager activity. Watches for changes in connectivity state, devices or connection profiles. (params: stream = stream)
 
 ```javascript
 const fs = require("fs");
@@ -122,7 +167,7 @@ network
   .catch((error) => console.log(error));
 ```
 
-8- List in-memory and on-disk connection profiles (params: active = true|false)
+#### List in-memory and on-disk connection profiles (params: active = true|false)
 
 ```javascript
 network
@@ -131,7 +176,7 @@ network
   .catch((error) => console.log(error));
 ```
 
-9- Activate a connection (params: uuid (can get with getConnectionProfilesList))
+#### Activate a connection (params: uuid (can get with getConnectionProfilesList))
 
 ```javascript
 network
@@ -140,7 +185,7 @@ network
   .catch((error) => console.log(error));
 ```
 
-10- Deactivate a connection from a device without preventing the device from further auto-activation. (params: uuid (can get with getConnectionProfilesList))
+#### Deactivate a connection from a device without preventing the device from further auto-activation. (params: uuid (can get with getConnectionProfilesList))
 
 ```javascript
 network
@@ -149,7 +194,7 @@ network
   .catch((error) => console.log(error));
 ```
 
-11- List available Wi-Fi access points. (params: reScan = true|false)
+#### List available Wi-Fi access points. (params: reScan = true|false)
 
 ```javascript
 network
@@ -158,7 +203,7 @@ network
   .catch((error) => console.log(error));
 ```
 
-12- Connect to a Wi-Fi network specified by SSID (params: SSID = String , Password = String)
+#### Connect to a Wi-Fi network specified by SSID (params: SSID = String , Password = String)
 
 ```javascript
 network
@@ -167,7 +212,7 @@ network
   .catch((error) => console.log(error));
 ```
 
-13- Get all IPv4 interfaces
+#### Get all IPv4 interfaces
 
 ```javascript
 network
@@ -176,7 +221,7 @@ network
   .catch((error) => console.log(error));
 ```
 
-14- Get system hostname
+#### Get system hostname
 
 ```javascript
 network
@@ -185,7 +230,16 @@ network
   .catch((error) => console.log(error));
 ```
 
-15- Get ethernet and wifi ip details (v1.0.5)
+#### Set system hostname _(new)_
+
+```javascript
+network
+  .setHostName(hostName)
+  .then((hostName) => console.log(result))
+  .catch((error) => console.log(error));
+```
+
+#### Get ethernet and wifi ip details (v1.0.5)
 
 ```javascript
 network
@@ -210,6 +264,10 @@ network
 This project is licensed under the MIT License
 
 ## Change log
+
+### 1.0.9 (2022-02-22)
+
+- Code refactoring, and additional functions: setHostName, deviceStatus, deviceConnect, deviceDisconnect, wifiHotspot, wifiCredentials
 
 ### 1.0.7 1.0.8 (2022-01-15)
 
