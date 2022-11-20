@@ -67,7 +67,7 @@ network
   .catch((error) => console.log(error));
 ```
 
-#### Get Device Status _(new)_
+#### Get Device Status
 
 ```javascript
 network
@@ -76,7 +76,7 @@ network
   .catch((error) => console.log(error));
 ```
 
-#### Connect Device (params: device (can get with deviceStatus)) _(new)_
+#### Connect Device (params: device (can get with deviceStatus))
 
 ```javascript
 network
@@ -85,7 +85,7 @@ network
   .catch((error) => console.log(error));
 ```
 
-#### Disconnect Device (params: device (can get with deviceStatus)) _(new)_
+#### Disconnect Device (params: device (can get with deviceStatus))
 
 ```javascript
 network
@@ -121,7 +121,7 @@ network
   .catch((error) => console.log(error));
 ```
 
-#### Wifi Hotspot (params: ifname (interface name like: wlo1, enp4s0) , ssid , password) _(new)_
+#### Wifi Hotspot (params: ifname (interface name like: wlo1, enp4s0) , ssid , password)
 
 ```javascript
 network
@@ -130,7 +130,7 @@ network
   .catch((error) => console.log(error));
 ```
 
-#### Get Wifi credentials (params: ifname (interface name like: wlo1, enp4s0)) _(new)_
+#### Get Wifi credentials (params: ifname (interface name like: wlo1, enp4s0))
 
 ```javascript
 network
@@ -230,7 +230,7 @@ network
   .catch((error) => console.log(error));
 ```
 
-#### Set system hostname _(new)_
+#### Set system hostname
 
 ```javascript
 network
@@ -259,11 +259,24 @@ network
   .catch((error) => console.log(error));
 ```
 
+#### Get all device ip details (v1.0.10) _(new)_
+
+```javascript
+network
+  .getAllDeviceInfoIPDetail()
+  .then((data) => console.log(data))
+  .catch((error) => console.log(error));
+```
+
 ## License
 
 This project is licensed under the MIT License
 
 ## Change log
+
+### 1.0.10 (2022-11-20)
+
+- Add getAllDeviceInfoIPDetail function
 
 ### 1.0.9 (2022-02-22)
 
