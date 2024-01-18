@@ -282,7 +282,7 @@ const getWifiList = async (reScan = false) => {
 
 const wifiConnect = (ssid, password, hidden = false) => {
   if (!hidden) {
-    cli([
+    return cli([
       "device",
       "wifi",
       "connect",
@@ -291,7 +291,7 @@ const wifiConnect = (ssid, password, hidden = false) => {
       String(password),
     ]);
   } else {
-    cli([
+    return cli([
       "device",
       "wifi",
       "connect",
