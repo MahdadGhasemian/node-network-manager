@@ -318,6 +318,7 @@ module.exports = {
   // connection (profile)
   connectionUp,
   connectionDown,
+  connectionDelete,
   getConnectionProfilesList,
   // device
   deviceStatus,
