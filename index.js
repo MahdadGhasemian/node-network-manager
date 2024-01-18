@@ -369,4 +369,6 @@ module.exports = {
   wifiCredentials,
   getWifiList,
   wifiConnect,
+  // Gsm
+  addGsmConnection
 };
