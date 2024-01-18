@@ -235,6 +235,7 @@ const getAllDeviceInfoIPDetail = async () => {
     };
   });
 };
+
 // wifi
 const wifiEnable = () => cli(["radio", "wifi", "on"]);
 const wifiDisable = () => cli(["radio", "wifi", "off"]);
@@ -251,6 +252,7 @@ const wifiHotspot = async (ifname, ssid, password) =>
     "password",
     password,
   ]);
+
 const wifiCredentials = async (ifname) => {
   if (!ifname) throw Error("ifname required!");
   const data = await clib([
@@ -262,6 +264,7 @@ const wifiCredentials = async (ifname) => {
   ]);
   return data[0];
 };
+
 const getWifiList = async (reScan = false) => {
   const data = await clib(
     reScan
@@ -274,15 +277,30 @@ const getWifiList = async (reScan = false) => {
     return o;
   });
 };
-const wifiConnect = (ssid, password) =>
-  cli([
-    "device",
-    "wifi",
-    "connect",
-    String(ssid),
-    "password",
-    String(password),
-  ]);
+
+const wifiConnect = (ssid, password, hidden) => {
+  if (!hidden) {
+    cli([
+      "device",
+      "wifi",
+      "connect",
+      String(ssid),
+      "password",
+      String(password),
+    ]);
+  } else {
+    cli([
+      "device",
+      "wifi",
+      "connect",
+      String(ssid),
+      "password",
+      String(password),
+      "hidden",
+      "yes"
+    ]);
+  }
+};
 
 // exports
 module.exports = {
