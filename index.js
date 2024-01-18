@@ -151,6 +151,8 @@ const getNetworkConnectivityState = (reChecking = false) =>
 const connectionUp = (profile) => cli(["connection", "up", String(profile)]);
 const connectionDown = (profile) =>
   cli(["connection", "down", String(profile)]);
+const connectionDelete = (profile) =>
+  cli(["connection", "delete", String(profile)]);
 const getConnectionProfilesList = (active = false) =>
   clib(
     active
@@ -278,7 +280,7 @@ const getWifiList = async (reScan = false) => {
   });
 };
 
-const wifiConnect = (ssid, password, hidden) => {
+const wifiConnect = (ssid, password, hidden = false) => {
   if (!hidden) {
     cli([
       "device",
