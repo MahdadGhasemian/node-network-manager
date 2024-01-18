@@ -304,6 +304,41 @@ const wifiConnect = (ssid, password, hidden = false) => {
   }
 };
 
+const addGsmConnection = ({ connection_name, interface = '*', apn, username, password, pin }) => {
+  let cmd = [
+    "con",
+    "add",
+    "type",
+    "gsm",
+    "con-name",
+    connection_name,
+    "ifname",
+    interface
+  ];
+
+  if (apn) {
+    cmd.push("apn");
+    cmd.push(String(apn));
+  }
+
+  if (username) {
+    cmd.push("username");
+    cmd.push(String(username));
+  }
+
+  if (password) {
+    cmd.push("password");
+    cmd.push(String(password));
+  }
+
+  if (pin) {
+    cmd.push("pin");
+    cmd.push(String(pin));
+  }
+  
+  return cli(cmd);
+};
+
 // exports
 module.exports = {
   getIPv4,
