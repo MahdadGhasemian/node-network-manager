@@ -119,7 +119,7 @@ const clib = (args) =>
 
 // activity monitor stream
 const activityMonitor = (stream) =>
-  Promise((resolve, reject) => {
+  new Promise((resolve, reject) => {
     try {
       const nmcli = spawn("nmcli", ["monitor"]);
       nmcli.stdout.pipe(stream, { end: false });
