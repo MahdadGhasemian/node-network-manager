@@ -212,6 +212,15 @@ network
   .catch((error) => console.log(error));
 ```
 
+#### Support for hidden WiFi (v1.0.11) _(new)_
+
+```javascript
+network
+  .wifiConnect("Your-Access-Point-SSId", "AP-Password", true)
+  .then((data) => console.log(data))
+  .catch((error) => console.log(error));
+```
+
 #### Get all IPv4 interfaces
 
 ```javascript
@@ -259,11 +268,36 @@ network
   .catch((error) => console.log(error));
 ```
 
-#### Get all device ip details (v1.0.10) _(new)_
+#### Get all device ip details
 
 ```javascript
 network
   .getAllDeviceInfoIPDetail()
+  .then((data) => console.log(data))
+  .catch((error) => console.log(error));
+```
+
+#### Delete a connection (v1.0.11) _(new)_
+
+```javascript
+network
+  .connectionDelete("b23522e9-c50e-43c2-bdca-ec0a5735b2ec")
+  .then((data) => console.log(data))
+  .catch((error) => console.log(error));
+```
+
+#### Add gsm connection (v1.0.11) _(new)_
+
+```javascript
+network
+  .addGsmConnection(
+    "gsm_test_delete_me",
+    "*",
+    "apn",
+    "username",
+    "password",
+    "1234"
+  )
   .then((data) => console.log(data))
   .catch((error) => console.log(error));
 ```
@@ -273,6 +307,12 @@ network
 This project is licensed under the MIT License
 
 ## Change log
+
+### 1.0.11 (2024-01-19)
+
+- Added support for hidden WiFi
+- Added Connection Delete function (connectionDelete)
+- Added addGsmConnection function
 
 ### 1.0.10 (2022-11-20)
 
