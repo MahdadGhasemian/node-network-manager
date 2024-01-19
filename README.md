@@ -308,6 +308,10 @@ This project is licensed under the MIT License
 
 ## Change log
 
+### 1.0.12 (2024-01-19)
+
+- Fixed issue #4
+
 ### 1.0.11 (2024-01-19)
 
 - Added support for hidden WiFi
