@@ -151,6 +151,8 @@ const getNetworkConnectivityState = (reChecking = false) =>
 const connectionUp = (profile) => cli(["connection", "up", String(profile)]);
 const connectionDown = (profile) =>
   cli(["connection", "down", String(profile)]);
+const connectionDelete = (profile) =>
+  cli(["connection", "delete", String(profile)]);
 const getConnectionProfilesList = (active = false) =>
   clib(
     active
@@ -235,6 +237,7 @@ const getAllDeviceInfoIPDetail = async () => {
     };
   });
 };
+
 // wifi
 const wifiEnable = () => cli(["radio", "wifi", "on"]);
 const wifiDisable = () => cli(["radio", "wifi", "off"]);
@@ -251,6 +254,7 @@ const wifiHotspot = async (ifname, ssid, password) =>
     "password",
     password,
   ]);
+
 const wifiCredentials = async (ifname) => {
   if (!ifname) throw Error("ifname required!");
   const data = await clib([
@@ -262,6 +266,7 @@ const wifiCredentials = async (ifname) => {
   ]);
   return data[0];
 };
+
 const getWifiList = async (reScan = false) => {
   const data = await clib(
     reScan
@@ -274,15 +279,65 @@ const getWifiList = async (reScan = false) => {
     return o;
   });
 };
-const wifiConnect = (ssid, password) =>
-  cli([
-    "device",
-    "wifi",
-    "connect",
-    String(ssid),
-    "password",
-    String(password),
-  ]);
+
+const wifiConnect = (ssid, password, hidden = false) => {
+  if (!hidden) {
+    return cli([
+      "device",
+      "wifi",
+      "connect",
+      String(ssid),
+      "password",
+      String(password),
+    ]);
+  } else {
+    return cli([
+      "device",
+      "wifi",
+      "connect",
+      String(ssid),
+      "password",
+      String(password),
+      "hidden",
+      "yes"
+    ]);
+  }
+};
+
+const addGsmConnection = ({ connection_name, interface = '*', apn, username, password, pin }) => {
+  let cmd = [
+    "con",
+    "add",
+    "type",
+    "gsm",
+    "con-name",
+    connection_name,
+    "ifname",
+    interface
+  ];
+
+  if (apn) {
+    cmd.push("apn");
+    cmd.push(String(apn));
+  }
+
+  if (username) {
+    cmd.push("username");
+    cmd.push(String(username));
+  }
+
+  if (password) {
+    cmd.push("password");
+    cmd.push(String(password));
+  }
+
+  if (pin) {
+    cmd.push("pin");
+    cmd.push(String(pin));
+  }
+  
+  return cli(cmd);
+};
 
 // exports
 module.exports = {
@@ -298,6 +353,7 @@ module.exports = {
   // connection (profile)
   connectionUp,
   connectionDown,
+  connectionDelete,
   getConnectionProfilesList,
   // device
   deviceStatus,
@@ -313,4 +369,6 @@ module.exports = {
   wifiCredentials,
   getWifiList,
   wifiConnect,
+  // Gsm
+  addGsmConnection
 };
