@@ -212,7 +212,7 @@ network
   .catch((error) => console.log(error));
 ```
 
-#### Support for hidden WiFi (v1.0.11) _(new)_
+#### Support for hidden WiFi (v1.0.11)
 
 ```javascript
 network
@@ -277,7 +277,7 @@ network
   .catch((error) => console.log(error));
 ```
 
-#### Delete a connection (v1.0.11) _(new)_
+#### Delete a connection (v1.0.11)
 
 ```javascript
 network
@@ -286,7 +286,7 @@ network
   .catch((error) => console.log(error));
 ```
 
-#### Add gsm connection (v1.0.11) _(new)_
+#### Add gsm connection (v1.0.11)
 
 ```javascript
 network
@@ -302,11 +302,41 @@ network
   .catch((error) => console.log(error));
 ```
 
+#### Add ethernet connection - static IP (v1.0.13) _(new)_
+
+```javascript
+network
+  .addEthernetConnection(
+    "test_connection_1",
+    "enp0s3",
+    "192.168.1.161",
+    "192.168.1.1"
+  )
+  .then((data) => console.log(data))
+  .catch((error) => console.log(error));
+```
+
+#### Change DNS (v1.0.13) _(new)_
+
+```javascript
+network
+  .changeDnsConnection("test_connection_1", "8.8.8.8 8.8.4.4")
+  .then((data) => console.log(data))
+  .catch((error) => console.log(error));
+```
+
 ## License
 
 This project is licensed under the MIT License
 
 ## Change log
+
+### 1.0.13 (2024-03-17)
+
+- Resolved issue #6
+- Added supporting to add ethernet connection with static IP (addEthernetConnection)
+- Added changeDnsConnection function
+- Fixed addGsmConnection parametes
 
 ### 1.0.12 (2024-01-19)
 
