@@ -169,7 +169,7 @@ const getConnectionProfilesList = (active = false) =>
   );
 const changeDnsConnection = (profile, dns) =>
   cli(["connection", "modify", String(profile), "ipv4.dns", String(dns)])
-const addEthernetConnection = ({ connection_name, interface = 'enp0s3', ipv4, gateway }) =>
+const addEthernetConnection = (connection_name, interface = 'enp0s3', ipv4, gateway) =>
   cli([
     "connection",
     "add",

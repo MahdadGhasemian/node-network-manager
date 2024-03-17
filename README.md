@@ -333,6 +333,10 @@ This project is licensed under the MIT License
 
 ### 1.0.13 (2024-03-17)
 
+- Fixed a typo
+
+### 1.0.13 (2024-03-17)
+
 - Resolved issue #6
 - Added supporting to add ethernet connection with static IP (addEthernetConnection)
 - Added changeDnsConnection function
